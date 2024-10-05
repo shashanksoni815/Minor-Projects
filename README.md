@@ -1,1 +1,1 @@
-# mini-project_CSS
+# minor projects 

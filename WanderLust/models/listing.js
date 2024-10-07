@@ -9,6 +9,7 @@ const listingSchema = new Schema({
     description: String,
     image: {
         type: String,
+        default: "https://png.pngtree.com/thumb_back/fh260/background/20230704/pngtree-3d-illustration-of-a-stunning-beach-sunset-image_3738541.jpg",
         set: (v) => 
             v === "" 
         ? "https://png.pngtree.com/thumb_back/fh260/background/20230704/pngtree-3d-illustration-of-a-stunning-beach-sunset-image_3738541.jpg" 
@@ -20,4 +21,4 @@ const listingSchema = new Schema({
 });
 
 const Listing = mongoose.model("Listing", listingSchema);
-module.export = Listing;
+module.exports = Listing;

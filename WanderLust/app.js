@@ -21,10 +21,9 @@ app.get("/", (req, res) => {
     res.send("hi, i am root");
 });
 
-app.get("/listings", async(req, res) => {
-    Listing.find({}).then((res) => {
-        console.log(res);
-    });
+app.get("/listings", async (req, res) => {
+    const allListings = await Listing.find({});
+    res.render("index.ejs", {allListings});
 });
 
 // app.get("/testListing", async(req, res) => {

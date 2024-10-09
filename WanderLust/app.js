@@ -21,18 +21,24 @@ app.get("/", (req, res) => {
     res.send("hi, i am root");
 });
 
-app.get("/testListing", async(req, res) => {
-    let sampleListing = new Listing({
-        title: "My New Villa",
-        description: "By the beach",
-        price: 1200,
-        location: "Calangute, Goa",
-        country: "India",
+app.get("/listings", async(req, res) => {
+    Listing.find({}).then((res) => {
+        console.log(res);
     });
-    await sampleListing.save();
-    console.log("sample was saved");
-    res.send("Successsful testing");
 });
+
+// app.get("/testListing", async(req, res) => {
+//     let sampleListing = new Listing({
+//         title: "My New Villa",
+//         description: "By the beach",
+//         price: 1200,
+//         location: "Calangute, Goa",
+//         country: "India",
+//     });
+//     await sampleListing.save();
+//     console.log("sample was saved");
+//     res.send("Successsful testing");
+// });
 
 app.listen(8080, () => {
     console.log("Server is listening to port 81080");
